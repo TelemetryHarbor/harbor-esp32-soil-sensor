@@ -124,9 +124,9 @@ void setup() {
   WiFi.mode(WIFI_OFF);
   Serial.println("Wi-Fi disconnected.");
 
-  // Deep sleep (disabled for debugging)
-  //esp_sleep_enable_timer_wakeup(SLEEP_INTERVAL_SEC * uS_TO_S_FACTOR);
-  //esp_deep_sleep_start();
+  // Deep sleep
+  esp_sleep_enable_timer_wakeup(SLEEP_INTERVAL_SEC * uS_TO_S_FACTOR);
+  esp_deep_sleep_start();
   Serial.println("==== End of setup ====");
 }
 
