@@ -1,20 +1,20 @@
 # ESP32 Soil Moisture Telemetry Monitor 🌱
 
-A low-power, cloud-connected soil moisture monitoring system using an **ESP32**, a **2-prong soil sensor**, and **Telemetry Harbor**. The project wakes at set intervals, measures soil moisture, sends the data to the cloud, and then returns to deep sleep to conserve battery.
+A low-power, cloud-connected soil moisture monitoring system using an **ESP32**, a **2-prong soil sensor**, and **Harbor Scale**. The project wakes at set intervals, measures soil moisture, sends the data to the cloud, and then returns to deep sleep to conserve battery.
 
 
 
 ## Overview
 
-This project wakes up periodically, reads soil moisture percentage from the 2-prong sensor, sends it to Telemetry Harbor, and returns to deep sleep for ultra-low-power operation. Ideal for **gardens, potted plants, and soil monitoring projects**.
+This project wakes up periodically, reads soil moisture percentage from the 2-prong sensor, sends it to Harbor Scale, and returns to deep sleep for ultra-low-power operation. Ideal for **gardens, potted plants, and soil monitoring projects**.
 
 ### Features
 
 * **Ultra-Low Power**: Uses **ESP32 Deep Sleep mode** to extend battery life.
 * **2-Prong Soil Sensor Support**: Accurate analog readings from standard 2-prong sensors.
-* **Cloud Connectivity**: Sends readings to Telemetry Harbor using the official SDK.
+* **Cloud Connectivity**: Sends readings to Harbor Scale using the official SDK.
 * **Timestamped Data**: Each reading is recorded with an ISO8601 UTC timestamp.
-* **Grafana Dashboards**: Ready for visualization with Telemetry Harbor.
+* **Grafana Dashboards**: Ready for visualization with Harbor Scale.
 
 
 
@@ -36,9 +36,9 @@ This project wakes up periodically, reads soil moisture percentage from the 2-pr
 * ESP32 board support package
 * Required libraries:
 
-  * **Telemetry Harbor SDK**
+  * **Harbor Scale SDK**
   * WiFi Library (built into ESP32 core)
-* [Telemetry Harbor](https://telemetryharbor.com) account
+* [Harbor Scale](https://harborscale.com) account
 
 
 
@@ -79,12 +79,12 @@ Connect the 2-prong soil sensor to the ESP32:
      ```
 3. Install required libraries via Library Manager:
 
-   * Telemetry Harbor SDK
+   * Harbor Scale SDK
    * WiFi Library (built-in)
 
-### 3. Telemetry Harbor Configuration
+### 3. Harbor Scale Configuration
 
-1. Create a [Telemetry Harbor](https://telemetryharbor.com) account.
+1. Create a [Harbor Scale](https://harborscale.com) account.
 2. Create a new Harbor called `"ESP32_Soil_Monitor"` (or your preferred name).
 3. Copy the **API ENDPOINT** and **API Key** from the Harbor details page.
 
@@ -94,14 +94,14 @@ Connect the 2-prong soil sensor to the ESP32:
 2. Update the following variables at the top of the file:
 
    * WiFi SSID and password
-   * Telemetry Harbor API Endpoint URL and API Key
+   * Harbor Scale API Endpoint URL and API Key
    * `shipId` (e.g., `"Garden 1"`)
 3. Select your ESP32 board and COM port.
 4. Upload the code.
 
 ### 5. Visualize Your Data
 
-1. Log in to your Telemetry Harbor account.
+1. Log in to your Harbor Scale account.
 2. Navigate to the Harbor details page and Grafana dashboard.
 3. Monitor soil moisture in real time and over time.
 
@@ -141,7 +141,7 @@ Serial.printf("Raw ADC: %d, Moisture: %.2f%%\n", raw, moisture);
 
 * **Sensor gives constant values**: Verify wiring, common ground, and analog output.
 * **WiFi connection fails**: Check credentials; device retries on next wake cycle.
-* **Data not appearing in Telemetry Harbor**: Verify API Key and Endpoint URL.
+* **Data not appearing in Harbor Scale**: Verify API Key and Endpoint URL.
 
 
 
@@ -160,5 +160,5 @@ MIT License – see LICENSE file for details.
 ## Acknowledgments
 
 * [Espressif](https://www.espressif.com) for ESP32 platform
-* [Telemetry Harbor](https://telemetryharbor.com) for IoT SDK and dashboard
+* [Harbor Scale](https://harborscale.com) for IoT SDK and dashboard
 

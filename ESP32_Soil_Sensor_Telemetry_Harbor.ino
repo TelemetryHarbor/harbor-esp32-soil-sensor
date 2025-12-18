@@ -6,7 +6,7 @@
 const char* ssid = "WIFI_NAME";
 const char* password = "WIFI_PASSWORD";
 
-// Telemetry Harbor API info
+// Harbor Scale API info
 const char* harborEndpoint = "API_ENDPOINT";
 const char* harborApiKey   = "API_KEY";
 const char* shipId         = "Plant 1";
